@@ -1,0 +1,355 @@
+/* menu.css */
+
+.menu {
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Cinzel', serif;
+}
+
+.menu h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.menu-section {
+  margin-bottom: 50px;
+}
+
+.menu-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ff6b35;
+  border-bottom: 2px solid #ff6b35;
+  padding-bottom: 10px;
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.menu-item {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+}
+
+.menu-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.menu-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.menu-item p {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.menu-item span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff6b35;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 15px;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 30px;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  color: #ff6b35;
+}
+
+.modal-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.modal-content h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-family: 'Cinzel', serif;
+}
+
+.modal-category,
+.modal-cuisine {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.modal-category strong,
+.modal-cuisine strong {
+  color: #ff6b35;
+}
+
+.modal-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #eee;
+}
+
+.modal-section h3 {
+  font-size: 1.3rem;
+  color: #ff6b35;
+  margin-bottom: 15px;
+  font-family: 'Cinzel', serif;
+}
+
+.ingredients-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ingredients-list li {
+  padding: 8px 0;
+  color: #555;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.95rem;
+}
+
+.ingredients-list li:last-child {
+  border-bottom: none;
+}
+
+.modal-section p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 2px solid #eee;
+}
+
+.modal-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff6b35;
+}
+
+.add-to-order-btn {
+  background-color: #ff6b35;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-order-btn:hover {
+  background-color: #e55a28;
+}
+
+/* Additional Food Search Container - Separate Bottom Section */
+.additional-food-container {
+  margin-top: 60px;
+  padding: 40px 0;
+  border-top: 3px solid #ff6b35;
+}
+
+.additional-food-container h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ff6b35;
+  border-bottom: 2px solid #ff6b35;
+  padding-bottom: 10px;
+}
+
+.additional-food-container .search-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.additional-food-container .search-section input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.additional-food-container .search-section button {
+  background: #ff6b35;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.additional-food-container .search-section button:hover:not(:disabled) {
+  background: #e55a2b;
+}
+
+.additional-food-container .search-section button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.category-selector {
+  margin-bottom: 20px;
+}
+
+.category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.category-btn {
+  background: #f9f9f9;
+  border: 2px solid #ddd;
+  padding: 10px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+.category-btn:hover {
+  background: #ff6b35;
+  border-color: #ff6b35;
+  color: white;
+}
+
+.category-btn.active {
+  background: #ff6b35;
+  border-color: #ff6b35;
+  color: white;
+}
+
+.additional-food-container .results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.additional-food-container .result-item {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.additional-food-container .result-item:hover {
+  transform: translateY(-5px);
+}
+
+.additional-food-container .result-item h3 {
+  margin-bottom: 5px;
+}
+
+.result-category {
+  font-size: 0.8rem;
+  color: #ff6b35;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Category Filter Styles */
+.category-results {
+  margin-top: 30px;
+}
+
+.category-results h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.additional-food-container .result-item h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+}

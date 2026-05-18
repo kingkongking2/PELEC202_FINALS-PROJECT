@@ -1,0 +1,131 @@
+.services-page {
+  padding: 4rem 1rem 2rem;
+  background: linear-gradient(180deg, #fefcf8 0%, #fbf5eb 55%, #fffdfd 100%);
+  color: #3b2a1d;
+}
+
+.services-hero {
+  display: grid;
+  grid-template-columns: minmax(300px, 1.2fr) minmax(260px, 0.8fr);
+  gap: 2.5rem;
+  max-width: 1180px;
+  margin: 0 auto 3rem;
+  align-items: stretch;
+}
+
+.services-copy {
+  max-width: 620px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.2rem;
+  border-radius: 999px;
+  background: rgba(209, 90, 31, 0.12);
+  color: #d15e1f;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.services-copy h1 {
+  margin: 1.4rem 0 1.25rem;
+  font-size: clamp(2.5rem, 3.5vw, 3.8rem);
+  line-height: 1.02;
+  color: #2f1e14;
+}
+
+.services-copy p {
+  margin: 0;
+  line-height: 1.85;
+  font-size: 1.05rem;
+  color: #5f4d41;
+}
+
+.services-callout {
+  display: grid;
+  gap: 1.25rem;
+  align-content: center;
+}
+
+.callout-card {
+  padding: 1.8rem;
+  border-radius: 26px;
+  background: white;
+  border: 1px solid rgba(209, 90, 31, 0.1);
+  box-shadow: 0 20px 50px rgba(64, 41, 24, 0.08);
+}
+
+.callout-card h3 {
+  margin-bottom: 0.85rem;
+  color: #3b2a1d;
+}
+
+.callout-card p {
+  margin: 0;
+  line-height: 1.75;
+  color: #6a5850;
+}
+
+.service-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.service-card {
+  padding: 2rem;
+  border-radius: 24px;
+  background: white;
+  border: 1px solid rgba(74, 41, 17, 0.08);
+  box-shadow: 0 20px 55px rgba(64, 41, 24, 0.06);
+}
+
+.service-card h2 {
+  margin-bottom: 1rem;
+  color: #2f1e14;
+  font-size: 1.35rem;
+}
+
+.service-card p {
+  margin: 0;
+  line-height: 1.8;
+  color: #6a584a;
+}
+
+.services-detail {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  max-width: 1180px;
+  margin: 3rem auto 0;
+}
+
+.detail-card {
+  padding: 2rem;
+  border-radius: 24px;
+  background: white;
+  border: 1px solid rgba(74, 41, 17, 0.08);
+  box-shadow: 0 20px 50px rgba(64, 41, 24, 0.06);
+}
+
+.detail-card h2 {
+  margin-bottom: 0.85rem;
+  color: #2f1e14;
+}
+
+.detail-card p {
+  margin: 0;
+  line-height: 1.8;
+  color: #6a584a;
+}
+
+@media (max-width: 980px) {
+  .services-hero {
+    grid-template-columns: 1fr;
+  }
+}
