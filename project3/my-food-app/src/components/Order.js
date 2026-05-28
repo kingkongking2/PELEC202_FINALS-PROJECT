@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Order.css';
+import InteractiveMap from './Map';
 
 function Order() {
   const [form, setForm] = useState({
@@ -11,31 +12,6 @@ function Order() {
     date: '',
     time: ''
   });
-  const [cart, setCart] = useState([]);
-
-  useEffect(() => {
-    loadCart();
-    
-    const handleCartUpdate = () => {
-      loadCart();
-    };
-    
-    window.addEventListener('cartUpdated', handleCartUpdate);
-    
-    const interval = setInterval(() => {
-      loadCart();
-    }, 500);
-    
-    return () => {
-      window.removeEventListener('cartUpdated', handleCartUpdate);
-      clearInterval(interval);
-    };
-  }, []);
-
-  const loadCart = () => {
-    const cartData = JSON.parse(localStorage.getItem('cart')) || [];
-    setCart(cartData);
-  };
 
   const handleFormChange = (e) => {
     setForm({
@@ -44,15 +20,48 @@ function Order() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Order submitted for ${form.eventName} at ${form.eventAddress} on ${form.date} ${form.time}`);
+  const handleAddressSelected = (address) => {
+    setForm((prevForm) => ({
+      ...prevForm,
+      eventAddress: address
+    }));
+  };
+
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    loadCart();
+
+    const handleCartUpdated = () => loadCart();
+    const handleStorageChange = (event) => {
+      if (event.key === 'cart') {
+        loadCart();
+      }
+    };
+
+    window.addEventListener('cartUpdated', handleCartUpdated);
+    window.addEventListener('storage', handleStorageChange);
+
+    return () => {
+      window.removeEventListener('cartUpdated', handleCartUpdated);
+      window.removeEventListener('storage', handleStorageChange);
+    };
+  }, []);
+
+  const loadCart = () => {
+    const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+    setCart(cartData);
+  };
+
+  const dispatchCartUpdate = () => {
+    window.dispatchEvent(new Event('cartUpdated'));
   };
 
   const removeFromCart = (itemId) => {
-    const updatedCart = cart.filter(item => item.id !== itemId);
-    setCart(updatedCart);
+    const updatedCart = cart.filter((item) => item.id !== itemId);
     localStorage.setItem('cart', JSON.stringify(updatedCart));
+    setCart(updatedCart);
+    dispatchCartUpdate();
   };
 
   const updateQuantity = (itemId, newQuantity) => {
@@ -60,20 +69,29 @@ function Order() {
       removeFromCart(itemId);
       return;
     }
-    const updatedCart = cart.map(item => 
+
+    const updatedCart = cart.map((item) =>
       item.id === itemId ? { ...item, quantity: newQuantity } : item
     );
-    setCart(updatedCart);
+
     localStorage.setItem('cart', JSON.stringify(updatedCart));
+    setCart(updatedCart);
+    dispatchCartUpdate();
   };
 
   const getTotalPrice = () => {
-    return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+    return cart.reduce((total, item) => total + item.price * item.quantity, 0);
   };
 
   const clearCart = () => {
-    setCart([]);
     localStorage.removeItem('cart');
+    setCart([]);
+    dispatchCartUpdate();
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Order submitted for ${form.eventName} at ${form.eventAddress} on ${form.date} ${form.time}`);
   };
 
   return (
@@ -95,7 +113,7 @@ function Order() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="eventAddress">Event Address</label>
+            <label htmlFor="eventAddress">Venue Address</label>
             <input
               type="text"
               id="eventAddress"
@@ -159,7 +177,7 @@ function Order() {
 
         <div className="cart-container">
           <h2>Your Cart</h2>
-          
+
           {cart.length === 0 ? (
             <p className="empty-cart">Your cart is empty. Add items from the menu!</p>
           ) : (
@@ -177,13 +195,8 @@ function Order() {
                       <span className="quantity">{item.quantity}</span>
                       <button onClick={() => updateQuantity(item.id, item.quantity + 1)}>+</button>
                     </div>
-                    <div className="cart-item-total">
-                      ₱{item.price * item.quantity}
-                    </div>
-                    <button 
-                      className="remove-btn" 
-                      onClick={() => removeFromCart(item.id)}
-                    >
+                    <div className="cart-item-total">₱{item.price * item.quantity}</div>
+                    <button className="remove-btn" onClick={() => removeFromCart(item.id)}>
                       Remove
                     </button>
                   </div>
@@ -199,6 +212,11 @@ function Order() {
             </>
           )}
         </div>
+      </div>
+
+      <div className="map-section">
+        <h2>Find Your Event Location</h2>
+        <InteractiveMap onAddressSelect={handleAddressSelected} />
       </div>
     </div>
   );

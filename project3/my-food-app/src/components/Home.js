@@ -28,69 +28,15 @@ const Home = () => {
             Book your catering today!
           </p>
           
-          <Link to="/order" className="order-btn">Order Now!</Link>
-        </div>
-      </section>
-
-      <section className="home-intro">
-        <div className="intro-section">
-          <div className="intro-copy">
-            <span className="eyebrow">Luxury Catering</span>
-            <h1>Elevate every event with unforgettable culinary excellence</h1>
-            <p>
-              Monreal Catering creates premium dining experiences with elegant presentation,
-              seamless service, and menus designed for weddings, corporate celebrations, and private gatherings.
-            </p>
-            <div className="intro-actions">
-              <Link to="/order" className="intro-button intro-button-primary">Book an Event</Link>
-              <Link to="/menu" className="intro-button intro-button-secondary">Explore the Menu</Link>
-            </div>
-          </div>
-
-          <div className="intro-visual">
-            <div className="intro-card intro-card--top">
-              <h2>Curated menus</h2>
-              <p>Signature dishes crafted for your style, season, and guest count.</p>
-            </div>
-            <div className="intro-card intro-card--bottom">
-              <h2>Full-service planning</h2>
-              <p>From tasting to execution, our team manages the details so you can enjoy the event.</p>
-            </div>
+          <div className="hero-buttons">
+            <Link to="/order" className="order-btn">Book an Event</Link>
+            <Link to="/menu" className="order-btn">Explore the Menu</Link>
+            <Link to="/order" className="order-btn">Order Now!</Link>
           </div>
         </div>
       </section>
 
-
-
-      {/* ===== HIGHLIGHTS SECTION ===== */}
-      <section className="home-highlights">
-        <div className="section-heading">
-          <p>Premium service, expertly delivered</p>
-          <h2>Refined catering tailored for memorable moments</h2>
-        </div>
-
-        <div className="highlight-grid">
-          <article className="highlight-card">
-            <h3>Fine Dining Presentation</h3>
-            <p>Professional plating, upscale station displays, and elegant event styling designed to impress.</p>
-          </article>
-          <article className="highlight-card">
-            <h3>Personalized Menus</h3>
-            <p>Unique menu planning based on dietary preferences, cultural tradition, and seasonal ingredients.</p>
-          </article>
-          <article className="highlight-card">
-            <h3>Dedicated Event Support</h3>
-            <p>Experienced staff ensures smooth service, punctual delivery, and an effortless client experience.</p>
-          </article>
-        </div>
-      </section>
-
-      {/* ===== TESTIMONIALS SECTION ===== */}
       <section className="home-testimonials">
-        <div className="section-heading">
-          <p>Client Stories</p>
-          <h2>Trusted by hosts who expect exceptional results</h2>
-        </div>
 
         <div className="testimonial-grid">
           <article className="testimonial-card">

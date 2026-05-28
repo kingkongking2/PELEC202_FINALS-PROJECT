@@ -9,12 +9,14 @@ import Menu from './components/Menu.js';
 import Order from './components/Order.js';
 import About from './components/About.js';
 import Contact from './components/Contact.js';
+import Cart from './components/Cart.js';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <Navbar />
+        <Cart />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />

@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&family=Lora:wght@400;500&display=swap');
 
 /* ================= NEW HERO ================= */
+.home-page {
+  position: relative;
+}
+
 .home-hero {
   position: relative;
   width: 100%;
@@ -39,6 +43,77 @@
   align-items: flex-start;
 }
 
+.home-testimonials {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  width: min(92vw, 960px);
+  max-width: 960px;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  border: none;
+  z-index: 5;
+}
+
+.home-testimonials .section-heading {
+  margin-bottom: 16px;
+}
+
+.home-testimonials .section-heading p {
+  color: #d15e1f;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+}
+
+.home-testimonials .section-heading h2 {
+  font-size: 1.25rem;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.home-testimonials .testimonial-grid {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.home-testimonials .testimonial-card {
+  flex: 0 0 260px;
+  padding: 16px;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid rgba(74, 41, 17, 0.08);
+  box-shadow: 0 14px 24px rgba(64, 41, 24, 0.08);
+}
+
+.home-testimonials .testimonial-card p {
+  margin-bottom: 16px;
+}
+
+.home-testimonials .testimonial-author {
+  gap: 0.25rem;
+}
+
+@media (max-width: 980px) {
+  .home-testimonials {
+    position: static;
+    width: 100%;
+    margin: 2rem auto 0;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    padding: 0;
+  }
+
+  .home-testimonials .testimonial-card {
+    background: #fff;
+  }
+}
+
 .hero-title {
   margin-bottom: 1.5rem;
 }
@@ -75,6 +150,12 @@
   max-width: 520px;
 }
 
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
 .order-btn {
   display: inline-block;
   font-family: 'Cinzel', serif;
@@ -108,11 +189,6 @@
 
 .home-highlights {
   background: linear-gradient(180deg, #fefcf8 0%, #fbf5ee 55%, #fffdfd 100%);
-}
-
-.home-testimonials {
-  background: linear-gradient(180deg, #fffdfd 0%, #fbf5ee 45%, #fefcf8 100%);
-  padding-bottom: 4rem;
 }
 
 .section-heading p {

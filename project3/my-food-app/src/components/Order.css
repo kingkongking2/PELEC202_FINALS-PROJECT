@@ -22,7 +22,7 @@
 }
 
 .order-form,
-.cart-container {
+.order-info {
   background: #f9f9f9;
   padding: 30px;
   border-radius: 10px;
@@ -37,14 +37,14 @@
   overflow-y: auto;
 }
 
-.cart-container {
+.order-info {
   position: sticky;
   top: 110px;
   align-self: start;
   overflow-y: auto;
 }
 
-.cart-container::-webkit-scrollbar {
+.order-info::-webkit-scrollbar {
   width: 10px;
 }
 
@@ -76,6 +76,18 @@
   border-radius: 5px;
   font-size: 1rem;
   resize: vertical;
+}
+
+.order-info h2 {
+  font-size: 1.8rem;
+  color: #ff6b35;
+  margin-bottom: 18px;
+}
+
+.order-info p {
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 16px;
 }
 
 .submit-btn {
@@ -326,6 +338,17 @@
 
 .clear-cart-btn:hover {
   background: #e55a2b;
+}
+
+.map-section {
+  margin-top: 40px;
+}
+
+.map-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ff6b35;
+  text-align: center;
 }
 
 @media (max-width: 1024px) {
