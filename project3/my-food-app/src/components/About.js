@@ -1,58 +1,62 @@
 import React from 'react';
 import './About.css';
+import heroImage from '../assets/about.png';
+import featureImage from '../assets/about-bottom.png';
+import benefitOne from '../assets/whychooseus1.png';
+import benefitTwo from '../assets/whychooseus2.png';
+import benefitThree from '../assets/whychooseus3.png';
 
 const About = () => {
   return (
     <section className="about-page">
-      <div className="about-hero">
-        <div className="about-copy">
-          <span className="eyebrow">About Monreal</span>
-          <h1>Crafting elegant culinary experiences for every milestone</h1>
+      <div className="about-hero" style={{ backgroundImage: `url(${heroImage})` }}>
+        <div className="hero-panel">
+          <span className="eyebrow">About Us</span>
+          <h1>Welcome to the Best Catering Company</h1>
           <p>
-            Monreal Catering blends refined gastronomy with thoughtful service to create memorable events that feel effortless and elevated.
-            We partner with each client to design menus, service, and presentation that reflect their unique style.
+            At Monreal, we believe every great occasion begins with an exceptional meal.
+            Named with a commitment to quality and elegance, our catering service is dedicated to turning your milestones into unforgettable culinary experiences.
           </p>
-        </div>
-        <div className="about-stats">
-          <div className="stat-card">
-            <strong>15+</strong>
-            <span>Years of catering excellence</span>
-          </div>
-          <div className="stat-card">
-            <strong>500+</strong>
-            <span>Events served with a premium touch</span>
-          </div>
         </div>
       </div>
 
-      <section className="about-values">
-        <div className="value-card">
-          <h2>Our Promise</h2>
-          <p>Beautiful cuisine, reliable service, and a refined guest experience delivered with care from concept to cleanup.</p>
+      <section className="about-intro">
+        <div className="intro-copy">
+          <h2>About Us</h2>
+          <p>
+            Whether you are hosting an intimate family gathering, a corporate event, or a grand celebration, we bring a passion for flavor and a sharp eye for detail to every plate.
+            Our team focuses on blending traditional hospitality with modern culinary trends, ensuring that your guests are not just fed, but truly inspired.
+          </p>
+          <p>
+            From menu planning and presentation to flawless execution, Monreal Catering delivers polished service and exceptional food tailored to your budget, preferences, and vision.
+          </p>
         </div>
-        <div className="value-card">
-          <h2>Our Approach</h2>
-          <p>Every event receives thoughtful planning, premium ingredients, and service executed with calm precision.</p>
-        </div>
-        <div className="value-card">
-          <h2>Our Commitment</h2>
-          <p>We create moments where food brings people together, and every detail contributes to an exceptional celebration.</p>
+        <div className="intro-image">
+          <img src={featureImage} alt="Chef preparing a dish" />
         </div>
       </section>
 
-      <section className="about-story">
-        <div className="story-copy">
-          <h2>Why choose Monreal?</h2>
-          <p>We combine a deep passion for hospitality with refined culinary expertise. Every menu is custom-designed, every event is treated as a true occasion, and every guest leaves satisfied.</p>
-          <ul>
-            <li>Personalized menu consultation and tasting</li>
-            <li>Experienced service teams with premium presentation</li>
-            <li>Flexible catering solutions for weddings, corporate events, and private celebrations</li>
-          </ul>
+      <section className="about-benefits">
+        <h2>Why Choose Us?</h2>
+        <div className="benefits-grid">
+          <article className="benefit-card">
+            <img src={benefitOne} alt="Attentive catering service" />
+            <h3>Attention to Detail</h3>
+            <p>From food styling to portioning, we take care of every detail to create a polished and memorable dining experience.</p>
+          </article>
+
+          <article className="benefit-card">
+            <img src={benefitTwo} alt="Customers enjoying event" />
+            <h3>Customer Satisfaction</h3>
+            <p>Your happiness is our priority, and we go the extra mile to exceed expectations every time.</p>
+          </article>
+
+          <article className="benefit-card">
+            <img src={benefitThree} alt="Fresh catering ingredients" />
+            <h3>Customized Menus</h3>
+            <p>From classic comfort food to contemporary gourmet selections, we tailor our service to match your unique vision.</p>
+          </article>
         </div>
-        <blockquote className="about-motto">
-          “Good food. Good mood. Delivered with care.”
-        </blockquote>
       </section>
     </section>
   );
