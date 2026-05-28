@@ -37,6 +37,7 @@ const About = () => {
       </section>
 
       <section className="about-benefits">
+        <span className="eyebrow">Why Choose Us</span>
         <h2>Why Choose Us?</h2>
         <div className="benefits-grid">
           <article className="benefit-card">

@@ -4,16 +4,19 @@ import { Link } from 'react-router-dom';
 function Navbar() {
   return (
     <nav className="navbar">
+      <div className="navbar-links navbar-links-left">
+        <Link to="/">Home</Link>
+        <Link to="/services">Services</Link>
+        <Link to="/menu">Menu</Link>
+      </div>
+
       <div className="navbar-logo">
         <Link to="/">
           <img src="/logo.png" alt="Logo" />
         </Link>
       </div>
 
-      <div className="navbar-links">
-        <Link to="/">Home</Link>
-        <Link to="/services">Services</Link>
-        <Link to="/menu">Menu</Link>
+      <div className="navbar-links navbar-links-right">
         <Link to="/order">Order</Link>
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>

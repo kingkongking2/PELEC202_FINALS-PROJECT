@@ -8,7 +8,10 @@
 
 .contact-page {
   font-family: 'Lora', serif;
-  background-color: #ffffff;
+  background-image: url('../assets/contact.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   min-height: 100vh;
   color: #333;
 }
@@ -29,7 +32,7 @@
   font-family: 'Cinzel', serif;
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
-  color: #2c3e50;
+  color: #d7dde4;
     /* margin-bottom: 1rem; */
   letter-spacing: -0.02em;
 }
@@ -37,7 +40,7 @@
 .page-subtitle {
   font-size: clamp(1rem, 2.5vw, 1.3rem);
   line-height: 1;
-  color: #6c757d;
+  color: #d7dde4;
   font-weight: 400;
 }
 
@@ -87,6 +90,11 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+}
+
+/* Add spacing to match the right column title so columns align visually */
+.contact-info-section {
+  padding-top: 3rem;
 }
 
 .contact-item {

@@ -57,7 +57,6 @@ function Contact() {
           <div className="contact-content">
             {/* Contact Information */}
             <section className="contact-info-section">
-              <h2 className="section-title">Get In Touch</h2>
               <div className="contact-info-grid">
                 <div className="contact-item" onClick={() => handleContactAction('Phone')}>
                   <div className="contact-icon">
