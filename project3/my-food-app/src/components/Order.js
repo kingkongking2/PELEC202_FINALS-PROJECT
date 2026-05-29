@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Order.css';
 import InteractiveMap from './Map';
 
 function Order() {
+  const mapSectionRef = useRef(null);
   const [form, setForm] = useState({
     eventName: '',
     eventAddress: '',
@@ -25,6 +26,12 @@ function Order() {
       ...prevForm,
       eventAddress: address
     }));
+  };
+
+  const scrollToMap = () => {
+    if (mapSectionRef.current) {
+      mapSectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   const [cart, setCart] = useState([]);
@@ -113,7 +120,12 @@ function Order() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="eventAddress">Venue Address</label>
+            <div className="form-group-label-row">
+              <label htmlFor="eventAddress">Venue Address</label>
+              <button type="button" className="map-scroll-btn" onClick={scrollToMap}>
+                Search on Map
+              </button>
+            </div>
             <input
               type="text"
               id="eventAddress"
@@ -214,7 +226,7 @@ function Order() {
         </div>
       </div>
 
-      <div className="map-section">
+      <div className="map-section" ref={mapSectionRef}>
         <h2>Find Your Event Location</h2>
         <InteractiveMap onAddressSelect={handleAddressSelected} />
       </div>

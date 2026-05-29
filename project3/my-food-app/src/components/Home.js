@@ -29,7 +29,7 @@ const Home = () => {
           </p>
           
           <div className="hero-buttons">
-            <Link to="/order" className="order-btn">Book an Event</Link>
+            <Link to="/about" className="order-btn">About Us</Link>
             <Link to="/menu" className="order-btn">Explore the Menu</Link>
             <Link to="/order" className="order-btn">Order Now!</Link>
           </div>

@@ -61,11 +61,34 @@
   margin-bottom: 20px;
 }
 
+.form-group-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
 .form-group label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
   color: #333;
+}
+
+.map-scroll-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.map-scroll-btn:hover {
+  background: #0056cc;
 }
 
 .form-group input,
