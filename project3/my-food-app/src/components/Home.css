@@ -5,6 +5,10 @@
   position: relative;
 }
 
+.here-title {
+  width: 100%;
+  min-height: auto;
+}
 .home-hero {
   position: relative;
   width: 100%;
